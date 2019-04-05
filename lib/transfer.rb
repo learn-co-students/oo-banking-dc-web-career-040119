@@ -32,7 +32,17 @@ class Transfer
     end
   end
 
+  def reverse_transfer
+    @@all.each do |transfer|
+      if self == transfer
+        self.sender.balance += self.amount
+        self.receiver.balance -= self.amount
+        self.status = "reversed"
+      end
+    end
+  end
+
 end
 
 
-#Transfers start out in a "pending" status. They can be executed and go to a "complete" state. They can also go to a "rejected" status. A completed transfer can also be reversed and go into a "reversed" status.
+#Transfers start out in a "pending" status. They can be executed and go to a "complete" state. They can also go to a "rejected" status. A completed transfer can also be reversed and go into a "reversed" status
