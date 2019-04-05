@@ -1,12 +1,5 @@
 class BankAccount
 
-<<<<<<< HEAD
-	attr_reader :name
-	
-	def initialize(name)
-		@name = name
-	end 
-=======
   attr_reader :name
   attr_accessor :balance, :status
 
@@ -32,7 +25,6 @@ class BankAccount
     self.status = "closed"
   end
 
->>>>>>> e1bcce961b8746b896a755b0d063e24141fd58a2
 end
 
 
