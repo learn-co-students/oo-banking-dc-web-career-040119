@@ -1,3 +1,31 @@
+require 'pry'
+
 class BankAccount
 
+attr_reader(:name)
+attr_accessor(:balance, :status)
+
+  def initialize(name)
+  #  binding.pry
+    @name = name
+    @balance = 1000
+    @status = "open"
+  end
+
+  def deposit(amount)
+  #  binding.pry
+    @balance += amount
+  end
+
+  def display_balance
+    "Your balance is $#{self.balance}."
+  end
+
+  def valid?
+    status == "open" && self.balance > 0
+  end
+
+  def close_account
+    self.status = "closed"
+  end
 end
